@@ -1,0 +1,12 @@
+#calorie-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid #ccc;
+}
+
+#calories-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
