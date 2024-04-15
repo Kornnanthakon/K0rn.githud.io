@@ -1,0 +1,31 @@
+let totalCalories = 0;
+let burnedCalories = 0;
+
+function displayCalories() {
+    document.getElementById('total-calories').textContent = totalCalories;
+    
+    // ตรวจสอบแคลอรี่เผาผลาญ
+    const remainingCalories = totalCalories - burnedCalories;
+    const calorieCircle = document.getElementById('calorie-circle');
+    
+    if (remainingCalories < 0) {
+        calorieCircle.style.borderColor = 'red';
+    } else {
+        calorieCircle.style.borderColor = '#ccc';
+    }
+}
+
+// ฟังก์ชันเพิ่มแคลอรี่จากอาหาร
+function addFood(foodName, calories) {
+    totalCalories += parseInt(calories);
+    displayCalories();
+}
+
+// ฟังก์ชันเพิ่มแคลอรี่เผาผลาญจากการออกกำลังกาย
+function addBurnedCalories(calories) {
+    burnedCalories += parseInt(calories);
+    displayCalories();
+}
+
+// ดึงข้อมูลจากฐานข้อมูล
+// แสดงรายการอาหารและแคลอรี่ทั้งหมด
